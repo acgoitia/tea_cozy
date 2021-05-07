@@ -1,0 +1,216 @@
+/*    
+
+Things to edit for responsiveness:
+    - DONE: change nav-bar when width < 480px (no logo, only links)
+    - DONE: banner font smaller when width < 480px
+    - change margins of tea pictures for width < 480px
+    - DONE: banner title to auto-adjust as screen becomes thinner
+    - DONE: Tea promotions title to center when width < 1000 px
+    - DONE: tea pictures into columns with screen < 1000px
+    - DONE: wrap locations when width < 1230px
+
+*/
+
+
+/* General Format */
+
+* {
+    box-sizing: border-box;
+    color: seashell;
+}
+
+html {
+    background-color: black;
+    font-family: Helvetica, sans-serif;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 22px;
+}
+
+body {
+    margin: 0;
+}
+
+/*Nav Bar*/
+
+header {
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 69px;
+    border-bottom: 1px solid seashell;
+    align-items: center;
+    z-index: 1;
+    background-color: black;
+    justify-content: space-between;
+}
+
+header img {
+    height: 50px;
+    margin-left: 10px;
+}
+
+/* Adjust nav bar to hide logo, center links*/
+@media only screen and (max-width: 480px) {
+    header {
+        justify-content: center;
+    }
+    header img {
+        display: none;
+    }
+    .navigation {
+        margin-right: 0;
+    }
+}
+
+.navigation {
+    
+    text-align: right;
+    margin-right: 30px;
+    font-size: 0.85rem;
+}
+
+a {
+    margin: 5px;
+}
+main {
+    /*position: relative;
+    top: 69px;*/
+    margin-top: 69px;
+}
+
+/* Page Title and Banner*/
+
+.banner {
+    background-image: url("https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg");
+    height: 700px;    /* assuming width = 1280px, 700px ~ 55%- no change for now*/
+    width: 90%;  /* assuming width = 1280px, 1200px ~ 95% */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.banner h2, .banner h4 {
+    width: 100%;
+    margin: 0;
+    background-color: black;
+    opacity: 0.9;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
+}
+
+@media only screen and (max-width: 480px) {
+    .banner h4 {
+        font-size: 0.8em;
+    }
+}
+
+/* Tea Offers */
+
+.promotion {
+    width: 75%;  /* Changed to 75% from 1000px to make sure div stretches/shrinks with screen size */
+    margin: 40px auto;
+}
+
+.promotion h2, .promotion h4 {
+    /* Add Margins */
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    width: 300px;
+    height: 200px;
+    margin: 20px 20px 10px 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    .promotion {
+        width: 90%;
+    }
+
+    figure img {
+        margin: 10px 0px 10px 0px;
+    }
+}
+
+.container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Location Formatting */
+.locations {
+    background-image: url("https://content.codecademy.com/courses/freelance-1/unit-4/img-locations-background.jpg");
+    width: 90%;  /*Change initial 1200px to same relative width as banner*/
+    min-height:500px;  /* original height set to 500px*/
+    height: auto;
+    /*height: 500px;*/
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+
+.loc-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1230px) {
+    .loc-container {
+        flex-wrap: wrap;
+    }
+}
+
+
+.address {
+    width: 300px;
+    background-color: black;
+    opacity: 1;
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 1230px) {
+    .address {
+        margin: 20px;
+    }
+}
+
+.locations h2 {
+    margin-bottom: 15px;
+    margin-top: -52.6px;
+}
+
+@media only screen and (max-width: 1230px) {
+    .locations h2 {
+        margin: 40px 20px 15px 20px;
+    }
+}
+
+/* Footer */
+
+footer {
+    /*position: relative;
+    top: 69px;*/
+    margin: 20px;
+
+}
+
+footer p {
+    text-align: left;
+    font-size: 0.75rem;
+}
